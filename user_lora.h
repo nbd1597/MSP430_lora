@@ -5,7 +5,11 @@
 #include <stdint.h>
 #include "user_gpio.h"
 #include "user_uart.h"
-uint8_t lora_buf[16];
+#include <stdio.h>
+#include "user_rtc.h"
+#include "buffer_queue.h"
+uint8_t lora_buf[32];
+uint8_t TX_en;
 
 // Byte 0 command head
 typedef enum {
@@ -97,7 +101,7 @@ void LORA_SendCmd(CommandType);
 void LORA_SendParam(CommandType, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t);
 void LORA_SendByte(uint8_t);
 void LORA_SendString(char *);
-void LORA_SendData(uint8_t *data);
-void LORA_AUXWait();
+void LORA_SendData(Queue* buffer, uint8_t *data);
+void return_time(rtc_state *rtc, Queue* buffer);
 
 #endif /* USER_LORA_H_ */

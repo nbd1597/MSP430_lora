@@ -8,4 +8,5 @@ void UART_Init() {
     UCA0MCTL = UCBRS1 + UCBRS0;                     // Modulator 3
     UCA0CTL1 &= ~UCSWRST;
     UC0IE |= UCA0RXIE;                              // UART enable
+    //UC0IE |= UCA0TXIE;
 }

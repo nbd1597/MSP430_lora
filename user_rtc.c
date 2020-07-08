@@ -28,11 +28,11 @@ void RTC_Init_TimerA() {
 
     // Initialize RTC structure
     rtc.second = 0x00;
-    rtc.minute |= 0x00;
-    rtc.hour |= 0x00;
-    rtc.day |= 0x00;
-    rtc.month |= 0x00;
-    rtc.year |= 0x00;
+    rtc.minute = 0x00;
+    rtc.hour = 0x00;
+    rtc.day = 0x00;
+    rtc.month = 0x00;
+    rtc.year = 0x00;
 }
 
 
